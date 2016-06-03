@@ -17,7 +17,8 @@ public class OutputStreamHandler extends OutputStream {
 
 	@Override
 	public void write(int b) throws IOException {
-		sb.append(""+b);
+		sb.append((char)b);
+		System.out.println("Append: " + sb.toString());
 	}
 
 }
