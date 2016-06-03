@@ -1,5 +1,10 @@
 package machine;
 
-public interface IRegister {
+import java.util.List;
 
+import machine.types.ProductType;
+
+public interface IRegister {
+	public void setProducts(List<ProductType> products);
+	public int getNumProducts();
 }

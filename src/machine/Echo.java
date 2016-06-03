@@ -16,6 +16,7 @@ public class Echo {
 		this.input = input;
 		this.output = output;
 		this.register = register;
+		
 	}
 	
 	public void process() {
