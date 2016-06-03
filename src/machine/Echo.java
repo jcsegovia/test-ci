@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import machine.types.Discount;
+import machine.types.ProductType;
+import machine.types.Type;
 
 public class Echo {
 
@@ -40,5 +46,23 @@ public class Echo {
 		output.write('\n');
 	}
 
+	public static void main(String[] args){
+		//Apples 100
+		//Cherries 175
+		//Cherries 230
+		Register r = new Register();
+		Map<Type,ProductType> products = new HashMap<>();
+		products.put(Type.Apples, new ProductType(Type.Apples, 100));
+		products.put(Type.Bananas, new ProductType(Type.Bananas, 150));
+		ProductType cherries = new ProductType(Type.Cherries, 75);
+		Discount d = new Discount();
+		d.setNumItems(2);
+		d.setDiscountValue(20);
+		cherries.setDiscount(d);
+		products.put(Type.Cherries, cherries);
+		r.setProducts(products);
+		Echo e = new Echo(System.in, System.out, r);
+		e.process();
+	}
 
 }
