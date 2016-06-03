@@ -23,4 +23,5 @@ public class Discount {
 	public void setDiscountValue(int discountValue) {
 		this.discountValue = discountValue;
 	}
+	
 }
