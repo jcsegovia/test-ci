@@ -28,4 +28,10 @@ public class RegisterTest {
 		r.setProducts(products);
 		Assert.assertEquals(3, r.getNumProducts());
 	}
+	
+	@Test
+	public void testRegisterProductsEmpty(){
+		Register r = new Register();
+		Assert.assertEquals(0, r.getNumProducts());
+	}
 }
