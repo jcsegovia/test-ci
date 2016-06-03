@@ -32,6 +32,20 @@ public class RegisterTest {
 	}
 	
 	@Test
+	public void testRegisterProduct1(){
+		Register r = new Register();
+		Map<Type,ProductType> products = new HashMap<>();
+		products.put(Type.Apples, new ProductType(Type.Apples, 100));
+		products.put(Type.Bananas, new ProductType(Type.Bananas, 150));
+		products.put(Type.Cherries, new ProductType(Type.Cherries, 75));
+		r.setProducts(products);
+		r.process("Apples");
+		r.process("Bananas");
+		r.process("Cherries");
+		Assert.assertEquals(325, r.getTotal());
+	}
+	
+	@Test
 	public void testRegisterProductsEmpty(){
 		Register r = new Register();
 		Assert.assertEquals(0, r.getNumProducts());

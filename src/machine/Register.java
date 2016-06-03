@@ -45,5 +45,10 @@ public class Register implements IRegister {
 			return products.size();
 		}
 	}
+
+	@Override
+	public int getTotal() {
+		return total;
+	}
 	
 }
