@@ -1,7 +1,9 @@
 package machine;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,10 +23,10 @@ public class RegisterTest {
 	@Test
 	public void testRegisterProductsWithItems(){
 		Register r = new Register();
-		List<ProductType> products = new ArrayList<>();
-		products.add(new ProductType(Type.Apples, 100));
-		products.add(new ProductType(Type.Bananas, 150));
-		products.add(new ProductType(Type.Cherries, 75));
+		Map<Type,ProductType> products = new HashMap<>();
+		products.put(Type.Apples, new ProductType(Type.Apples, 100));
+		products.put(Type.Bananas, new ProductType(Type.Bananas, 150));
+		products.put(Type.Cherries, new ProductType(Type.Cherries, 75));
 		r.setProducts(products);
 		Assert.assertEquals(3, r.getNumProducts());
 	}
