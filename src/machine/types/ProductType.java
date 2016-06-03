@@ -4,7 +4,7 @@ public class ProductType {
 	
 	private Type type;
 	private int value;
-	private int discount;
+	private Discount discount;
 	
 	public ProductType(Type type, int value){
 		this.type = type;
@@ -27,11 +27,11 @@ public class ProductType {
 		this.value = value;
 	}
 
-	public int getDiscount() {
+	public Discount getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(int discount) {
+	public void setDiscount(Discount discount) {
 		this.discount = discount;
 	}
 
