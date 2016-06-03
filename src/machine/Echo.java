@@ -23,8 +23,10 @@ public class Echo {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(input));
 			String line;
+			String msg;
 			while ((line = br.readLine()) != null) {
-				println(line);
+				msg = register.process(line);
+				println(msg);
 			}
 
 		} catch (IOException io) {
