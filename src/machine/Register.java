@@ -18,8 +18,9 @@ public class Register implements IRegister {
 		Type t = getType(msg);
 		if(t != null){
 			ProductType pt = products.get(t);
+			total += pt.getValue();
 		}
-		return msg;
+		return msg + ": " + total;
 	}
 	
 	private Type getType(String msg){

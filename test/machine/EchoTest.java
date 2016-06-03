@@ -16,8 +16,7 @@ public class EchoTest {
 		InputStream in = new ByteArrayInputStream("Hola".getBytes(StandardCharsets.UTF_8));
 		Echo echo = new Echo(in, out, new Register());
 		echo.process();
-		Assert.assertEquals("Hola\n", out.getData());
-		
+		Assert.assertEquals("Hola: 0\n", out.getData());
 	}
 
 }
