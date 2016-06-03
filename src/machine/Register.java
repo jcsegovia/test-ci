@@ -1,6 +1,5 @@
 package machine;
 
-import java.util.List;
 import java.util.Map;
 
 import machine.types.Discount;
@@ -11,13 +10,6 @@ public class Register implements IRegister {
 	
 	private Map<Type, ProductType> products;
 	private int total;
-	
-	public Register(){
-	}
-	
-	//Apples 100
-	//Cherries 175
-	//Cherries 230
 	
 	public String process(String msg){
 		Type t = getType(msg);

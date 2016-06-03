@@ -1,6 +1,5 @@
 package machine;
 
-import java.util.List;
 import java.util.Map;
 
 import machine.types.ProductType;
