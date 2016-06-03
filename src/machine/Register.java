@@ -26,8 +26,10 @@ public class Register implements IRegister {
 			Discount d = pt.getDiscount();
 			total += pt.getValue();
 			if(d != null){
-				d.updateDiscount();
-				total -= d.getDiscountValue();
+				d.updateCounter();
+				if(d.shouldApplyDiscount()){
+					total -= d.getDiscountValue();
+				}
 			}
 		}
 		return msg + ": " + total;

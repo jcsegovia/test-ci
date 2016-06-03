@@ -8,6 +8,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
+import machine.types.Discount;
 import machine.types.ProductType;
 import machine.types.Type;
 
@@ -43,6 +44,28 @@ public class RegisterTest {
 		r.process("Bananas");
 		r.process("Cherries");
 		Assert.assertEquals(325, r.getTotal());
+	}
+	
+	@Test
+	public void testRegisterProduct2(){
+		//Apples 100
+		//Cherries 175
+		//Cherries 230
+		Register r = new Register();
+		Map<Type,ProductType> products = new HashMap<>();
+		products.put(Type.Apples, new ProductType(Type.Apples, 100));
+		products.put(Type.Bananas, new ProductType(Type.Bananas, 150));
+		ProductType cherries = new ProductType(Type.Cherries, 75);
+		Discount d = new Discount();
+		d.setNumItems(2);
+		d.setDiscountValue(20);
+		cherries.setDiscount(d);
+		products.put(Type.Cherries, cherries);
+		r.setProducts(products);
+		r.process("Apples");
+		r.process("Cherries");
+		r.process("Cherries");
+		Assert.assertEquals(230, r.getTotal());
 	}
 	
 	@Test

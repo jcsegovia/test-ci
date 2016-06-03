@@ -3,6 +3,7 @@ package machine.types;
 public class Discount {
 	private int numItems;
 	private int discountValue;
+	private int counter;
 	
 	public Discount(){
 		
@@ -22,6 +23,19 @@ public class Discount {
 
 	public void setDiscountValue(int discountValue) {
 		this.discountValue = discountValue;
+	}
+	
+	public void updateCounter(){
+		counter++;
+	}
+	
+	public boolean shouldApplyDiscount(){
+		if(counter == numItems){
+			counter = 0;
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 }
