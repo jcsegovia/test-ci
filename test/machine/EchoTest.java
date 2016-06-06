@@ -14,9 +14,10 @@ public class EchoTest {
 	public void testReadWrite(){
 		OutputStreamHandler out = new OutputStreamHandler();
 		InputStream in = new ByteArrayInputStream("Hola".getBytes(StandardCharsets.UTF_8));
-		Echo echo = new Echo(in, out, new Register());
+		DummyRegister dummyRegister = new DummyRegister();
+		Echo echo = new Echo(in, out, dummyRegister);
 		echo.process();
-		Assert.assertEquals("Hola: 0\n", out.getData());
+		Assert.assertEquals("Hola\n", out.getData());
 	}
 
 }
